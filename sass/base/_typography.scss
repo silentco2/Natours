@@ -1,0 +1,94 @@
+h2{
+    font-size: 3.5rem;
+    font-weight: 700;
+    @include gradient-text;
+    letter-spacing: .2rem;
+    transition: all .2s;
+    text-transform: uppercase;
+    margin: 0 auto 8rem;
+    text-align: center;
+    width: fit-content;
+    @include media(tab){margin: 0 auto 4rem !important;}
+    &:hover{
+        transform: skew(15deg,2deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black,.2);
+    }
+    @include media(tab){font-size: 3rem;}
+    @include media(phone){font-size: 2.5rem;}
+}
+h4{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+p{
+    font-size: 1.6rem;
+    line-height: 1.7;
+    letter-spacing: 1.2;
+    margin-bottom: 2rem;
+}
+ul{
+    display: inline-block;
+    list-style: none;
+    li{
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        &:not(:last-child){
+            border-bottom: 1px solid $color-grey-faint;
+        }
+    }
+}
+span{
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    color: $color-white;
+}
+label{
+    font-size: 1.6rem;
+    margin-right: 6rem;
+    position: relative;
+    cursor: pointer;
+    @include media(tab){
+        display: block;
+        margin-right: 0;
+        margin-bottom: 2.5rem;
+    }
+    &[for="name"],&[for="email"]{
+        position: absolute;
+        font-size: 1.2rem;
+        top: 5.5rem;
+        left: 2rem;
+        pointer-events: none;
+        transition: all .2s;
+    }
+}
+input{
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    width:100%;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    border-radius: .2rem;
+    background-color: $color-white;
+    border-bottom: transparent 3px solid;
+    transition: border .2s;
+    &::-webkit-input-placeholder{
+        color: $color-grey-dark;
+    }
+    &[type="radio"]{
+        width: fit-content;
+        margin-right:2.5rem;
+        opacity: 0;
+    }
+    &:focus{
+        outline: none;
+        border-bottom: $color-secondary 3px solid;
+    }
+    &:valid{
+        border-color: $color-primary;
+    }
+}
